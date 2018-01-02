@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Variables</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header id="main-header">
+        <h1>CSS Variables</h1>
+    </header>
+    <div class="container">
+        <div class="grid">
+            <div class="box">
+                <h1>Header 1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dolor quasi! Autem nisi quae maxime dolorem
+                    vero? Accusamus ullam, corrupti corporis voluptates eos repellendus et vel voluptatum placeat cum esse
+                    aperiam maiores. Saepe, itaque est. Saepe rerum ad dolore reprehenderit.
+                </p>
+            </div>
+            <div class="box">
+                <h1>Header 2</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dolor quasi! Autem nisi quae maxime dolorem
+                    vero? Accusamus ullam, corrupti corporis voluptates eos repellendus et vel voluptatum placeat cum esse
+                    aperiam maiores. Saepe, itaque est. Saepe rerum ad dolore reprehenderit.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        /**
+        *   Get the CSS variables using JS
+        */
+        const box = document.querySelector(".box");
+        const boxStyles = getComputedStyle(box);
+        const boxMainColor = boxStyles.getPropertyValue("--box-main-color");
+        console.log("Box element main color: " + boxMainColor);
+
+        /**
+        *   Set the CSS variables using JS
+        */
+        const header = document.querySelector("#main-header");
+        header.style.setProperty("--header-bg-color", boxMainColor);
+
+    </script>
+</body>
+
+</html>
